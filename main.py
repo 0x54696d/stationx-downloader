@@ -11,7 +11,7 @@ from lecture import Lecture
 WINDOW_SIZE = '1920,1080'
 
 chrome_options = Options()
-chrome_options.add_argument('--headless')
+#chrome_options.add_argument('--headless')
 chrome_options.add_argument('--window-size=%s' % WINDOW_SIZE)
 
 driver = webdriver.Chrome(options=chrome_options)
@@ -108,11 +108,11 @@ def main():
                                         section.title.replace(":", "-"),
                                         f'{lecture_index}_{lecture.title.replace(":", "-")}.mp4')
 
+            lecture_index += 1
             print(f'\nDownloading lecture "{lecture.title}"')
             if os.path.exists(lecture_path):
                 print('Skipped because file already exists...')
             else:
-                lecture_index += 1
                 lecture.download(driver, lecture_path)
 
     driver.close()

@@ -12,7 +12,11 @@ class Lecture:
     def download(self, driver, path):
         driver.get(self.link)
         try:
-            download_link = driver.find_element(by=By.CLASS_NAME, value='download').get_property('href')
+            if driver.find_element(by=By.CLASS_NAME, value='download').text == 'Download':
+                download_link = driver.find_element(by=By.CLASS_NAME, value='download').get_property('href')
+            else:
+                print('No downloadable video file found!')
+                return
         except NoSuchElementException:
             print('No downloadable video file found!')
             return
