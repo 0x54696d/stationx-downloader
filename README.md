@@ -1,6 +1,7 @@
 # stationx-downloader
 A cross-platform python based utility to download courses from StationX Cyber Security School for personal offline use. 
 
+![Bildschirmfoto 2022-08-19 um 21 24 10](https://user-images.githubusercontent.com/39867997/185696589-b1f2cd57-cfb4-4536-884c-a2c67dea5bc2.png)
 
 ## Module installation
     pip install -r requirements.txt
